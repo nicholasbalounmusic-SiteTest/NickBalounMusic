@@ -9,21 +9,24 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #0a0a0a;
-      --dark: #111111;
-      --mid: #1c1c1c;
-      --gold: #c8a96e;
-      --gold-light: #e2c99a;
-      --cream: #f0e8d8;
-      --muted: #888;
-      --white: #faf8f4;
+      --black: #141414;       /* Midnight Onyx — text */
+      --dark: #ede8df;        /* Warm Parchment — section alt bg */
+      --mid: #e0d9ce;         /* Warm Parchment darker — cards/borders */
+      --gold: #9a6e28;        /* Burnished Gold (deepened for light bg) */
+      --gold-light: #b8873a;  /* Burnished Gold lighter */
+      --cream: #f5f1e8;       /* Warm Parchment — main bg */
+      --muted: #7a6a58;       /* Warm muted brown */
+      --clay: #a0522d;        /* Rustic Clay */
+      --olive: #4a5240;       /* Olive Green */
+      --slate: #3a3530;       /* Shadow Slate */
+      --white: #faf7f2;       /* Warm Parchment lightest */
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--black);
-      color: var(--cream);
+      background: var(--cream);
+      color: var(--black);
       font-family: 'Josefin Sans', sans-serif;
       font-weight: 300;
       letter-spacing: 0.04em;
@@ -50,7 +53,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 2rem 4rem;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+      background: linear-gradient(to bottom, rgba(245,241,232,0.97) 0%, rgba(245,241,232,0) 100%);
     }
 
     .nav-logo {
@@ -58,7 +61,7 @@
       font-weight: 300;
       font-size: 1.1rem;
       letter-spacing: 0.2em;
-      color: var(--gold);
+      color: var(--olive);
       text-decoration: none;
       text-transform: uppercase;
     }
@@ -71,7 +74,7 @@
       text-decoration: none;
       transition: color 0.3s;
     }
-    .nav-link:hover { color: var(--gold); }
+    .nav-link:hover { color: var(--olive); }
 
     /* ── HERO ── */
     .hero {
@@ -89,7 +92,7 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 300px;
-      background: linear-gradient(to bottom, transparent, var(--black));
+      background: linear-gradient(to bottom, transparent, var(--cream));
       pointer-events: none;
     }
 
@@ -103,7 +106,7 @@
       font-size: clamp(12rem, 22vw, 22rem);
       font-weight: 300;
       color: transparent;
-      -webkit-text-stroke: 1px rgba(200, 169, 110, 0.07);
+      -webkit-text-stroke: 1px rgba(74, 82, 64, 0.08);
       white-space: nowrap;
       pointer-events: none;
       user-select: none;
@@ -114,7 +117,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--olive);
       margin-bottom: 2rem;
       opacity: 0;
       animation: fadeUp 1s ease 0.3s forwards;
@@ -126,14 +129,14 @@
       font-weight: 300;
       line-height: 0.92;
       letter-spacing: -0.01em;
-      color: var(--white);
+      color: var(--slate);
       opacity: 0;
       animation: fadeUp 1s ease 0.5s forwards;
     }
 
     .hero-title em {
       font-style: italic;
-      color: var(--gold-light);
+      color: var(--olive);
     }
 
     .hero-sub {
@@ -166,7 +169,7 @@
       font-size: 0.6rem;
       letter-spacing: 0.45em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--olive);
       margin-bottom: 4rem;
       display: flex;
       align-items: center;
@@ -177,7 +180,7 @@
       flex: 1;
       max-width: 60px;
       height: 1px;
-      background: var(--gold);
+      background: var(--olive);
       opacity: 0.4;
     }
 
@@ -196,18 +199,18 @@
       font-size: clamp(2.5rem, 4vw, 4rem);
       font-weight: 300;
       line-height: 1.1;
-      color: var(--white);
+      color: var(--slate);
     }
 
     .about-heading em {
       font-style: italic;
-      color: var(--gold-light);
+      color: var(--olive);
     }
 
     .about-body {
       font-size: 0.8rem;
       line-height: 2.1;
-      color: #aaa;
+      color: var(--muted);
       padding-top: 0.5rem;
     }
 
@@ -236,7 +239,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(74,82,64,0.82) 0%, transparent 60%);
       z-index: 1;
       opacity: 0;
       transition: opacity 0.4s;
@@ -250,8 +253,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
-      border: 1px solid rgba(200,169,110,0.08);
+      background: linear-gradient(135deg, var(--mid) 0%, var(--dark) 100%);
+      border: 1px solid rgba(74, 82, 64, 0.12);
       transition: transform 0.6s ease;
     }
 
@@ -260,7 +263,7 @@
     .project-placeholder-icon {
       font-family: 'Cormorant Garamond', serif;
       font-size: 4rem;
-      color: rgba(200,169,110,0.15);
+      color: rgba(74, 82, 64, 0.2);
       font-style: italic;
     }
 
@@ -280,14 +283,14 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
       font-weight: 400;
-      color: var(--white);
+      color: #faf7f2;
     }
 
     .project-type {
       font-size: 0.6rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-light);
       margin-top: 0.25rem;
     }
 
@@ -302,12 +305,12 @@
     }
 
     /* ── MUSIC placeholder ── */
-    #music { background: var(--black); }
+    #music { background: var(--cream); }
 
     .music-placeholder {
       max-width: 800px;
       margin: 0 auto;
-      border: 1px solid rgba(200,169,110,0.15);
+      border: 1px solid rgba(74, 82, 64, 0.2);
       padding: 5rem 4rem;
       text-align: center;
       position: relative;
@@ -320,8 +323,8 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: 2.5rem;
-      color: var(--gold);
-      background: var(--black);
+      color: var(--olive);
+      background: var(--cream);
       padding: 0 1rem;
       line-height: 1;
     }
@@ -330,7 +333,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
       font-weight: 300;
-      color: var(--white);
+      color: var(--slate);
       margin-bottom: 1rem;
     }
 
@@ -355,13 +358,13 @@
       font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 300;
       line-height: 1;
-      color: var(--white);
+      color: var(--slate);
       margin-bottom: 2rem;
     }
 
     .contact-heading em {
       font-style: italic;
-      color: var(--gold-light);
+      color: var(--olive);
       display: block;
     }
 
@@ -381,13 +384,13 @@
       color: var(--gold);
       text-decoration: none;
       letter-spacing: 0.05em;
-      border-bottom: 1px solid rgba(200,169,110,0.3);
+      border-bottom: 1px solid rgba(154,110,40,0.35);
       padding-bottom: 0.4rem;
       transition: color 0.3s, border-color 0.3s;
     }
     .contact-email:hover {
-      color: var(--gold-light);
-      border-color: var(--gold-light);
+      color: var(--clay);
+      border-color: var(--clay);
     }
 
     /* ── FOOTER ── */
@@ -396,15 +399,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      background: var(--black);
+      border-top: 1px solid rgba(74,82,64,0.12);
+      background: var(--cream);
     }
 
     .footer-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.9rem;
       letter-spacing: 0.2em;
-      color: var(--gold);
+      color: var(--olive);
       text-transform: uppercase;
     }
 
@@ -412,7 +415,7 @@
       font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #444;
+      color: var(--muted);
     }
 
     /* ── ANIMATIONS ── */
@@ -565,7 +568,7 @@
       <p>
         This section will feature an embedded audio player showcasing<br>
         selected works and score excerpts.<br><br>
-        <em style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1rem;">
+        <em style="color: var(--olive); font-family: 'Cormorant Garamond', serif; font-size: 1rem;">
           A setup guide is on the way.
         </em>
       </p>
@@ -583,8 +586,8 @@
         Available for film, television, and multimedia projects.<br>
         Always open to a conversation.
       </p>
-      <a href="mailto:contact@nickbaloun.com" class="contact-email reveal">
-        contact@nickbaloun.com
+      <a href="/cdn-cgi/l/email-protection#2c4f4342584d4f586c42454f474e4d40435942024f4341" class="contact-email reveal">
+        <span class="__cf_email__" data-cfemail="264549485247455266484f454d44474a4953480845494b">[email&#160;protected]</span>
       </a>
     </div>
   </section>
@@ -595,7 +598,7 @@
     <span class="footer-copy">&copy; <span id="year"></span> Nick Baloun &mdash; Film Composer</span>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Auto year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -632,12 +635,4 @@
   ║                                                              ║
   ║  3. Update the project-title and project-type text          ║
   ║     to match your actual projects                            ║
-  ╚══════════════════════════════════════════════════════════════╝
-
-  HOW TO REPLACE YOUR BIO:
-  Find "Nick Baloun is a composer..." and replace with your own text.
-  Also update "[Your City]" with your actual city.
-  -->
-
-</body>
-</html>
+  ╚═════════════════════════════════════�
